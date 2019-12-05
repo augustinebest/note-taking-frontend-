@@ -18,7 +18,7 @@ const errorLink = onError(({ graphQLErrors }) => {
   if (graphQLErrors) graphQLErrors.map(({ message }) => notify.show(message, 'error'))
 })
 
-const httpLink = createHttpLink({ uri: "http://localhost:4300/graphql" });
+const httpLink = createHttpLink({ uri: "https://note-takingapi.herokuapp.com/graphql" });
 const link = ApolloLink.from([
   errorLink,
   httpLink
